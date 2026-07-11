@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Card Memory Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Home Screen -->
+    <section id="home-screen" class="screen active">
+      <div class="home-content">
+        <header class="home-header">
+          <h1 class="title">Flip Card Memory Game</h1>
+          <p class="subtitle">Choose your topic to start playing.</p>
+        </header>
+
+        <div class="topic-cards">
+          <button class="topic-card topic-animals" data-topic="animals" aria-label="Play Animals topic">
+            <span class="topic-emoji">🐾</span>
+            <span class="topic-label">Animals</span>
+          </button>
+          <button class="topic-card topic-food" data-topic="food" aria-label="Play Food topic">
+            <span class="topic-emoji">🍕</span>
+            <span class="topic-label">Food</span>
+          </button>
+          <button class="topic-card topic-space" data-topic="space" aria-label="Play Space topic">
+            <span class="topic-emoji">🚀</span>
+            <span class="topic-label">Space</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="floating-shapes" aria-hidden="true">
+        <span class="shape shape-1">⭐</span>
+        <span class="shape shape-2">🌈</span>
+        <span class="shape shape-3">✨</span>
+        <span class="shape shape-4">🎈</span>
+        <span class="shape shape-5">🌟</span>
+      </div>
+    </section>
+
+    <!-- Difficulty Screen -->
+    <section id="difficulty-screen" class="screen">
+      <div class="difficulty-content">
+        <header class="difficulty-header">
+          <button id="difficulty-back-btn" class="back-btn" aria-label="Back to topics">
+            <span class="back-arrow">←</span> Topics
+          </button>
+          <h2 id="difficulty-topic-title" class="title difficulty-title"></h2>
+          <p class="subtitle">Pick your difficulty level!</p>
+        </header>
+
+        <div class="difficulty-cards">
+          <button class="difficulty-card difficulty-easy" data-difficulty="easy" aria-label="Easy: 6 cards">
+            <span class="difficulty-emoji">😊</span>
+            <span class="difficulty-label">Easy</span>
+            <span class="difficulty-detail">6 cards · 2 × 3</span>
+          </button>
+          <button class="difficulty-card difficulty-medium" data-difficulty="medium" aria-label="Medium: 12 cards">
+            <span class="difficulty-emoji">🤔</span>
+            <span class="difficulty-label">Medium</span>
+            <span class="difficulty-detail">12 cards · 3 × 4</span>
+          </button>
+          <button class="difficulty-card difficulty-hard" data-difficulty="hard" aria-label="Hard: 24 cards">
+            <span class="difficulty-emoji">😤</span>
+            <span class="difficulty-label">Hard</span>
+            <span class="difficulty-detail">24 cards · 4 × 6</span>
+          </button>
+          <button class="difficulty-card difficulty-impossible" data-difficulty="impossible" aria-label="Impossible: 50 cards">
+            <span class="difficulty-emoji">🔥</span>
+            <span class="difficulty-label">Impossible</span>
+            <span class="difficulty-detail">50 cards · 5 × 10</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Screen -->
+    <section id="game-screen" class="screen">
+      <div class="game-content">
+        <header class="game-header">
+          <button id="back-btn" class="back-btn" aria-label="Back to difficulty">
+            <span class="back-arrow">←</span> Difficulty
+          </button>
+          <div class="game-info">
+            <h2 id="game-title" class="game-title"></h2>
+            <div class="stats">
+              <span class="stat"><span class="stat-icon">🎯</span> Moves: <strong id="moves">0</strong></span>
+              <span class="stat"><span class="stat-icon">✅</span> Pairs: <strong id="pairs">0</strong>/<span id="total-pairs">0</span></span>
+            </div>
+          </div>
+        </header>
+
+        <div id="card-grid" class="card-grid"></div>
+      </div>
+    </section>
+
+    <!-- Win Modal -->
+    <div id="win-modal" class="modal hidden" role="dialog" aria-labelledby="win-title">
+      <div class="modal-content">
+        <span class="modal-emoji">🎉</span>
+        <h2 id="win-title" class="modal-title">You did it!</h2>
+        <p class="modal-text">You matched all the pairs in <strong id="final-moves">0</strong> moves!</p>
+        <div class="modal-buttons">
+          <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+          <button id="home-btn" class="btn btn-secondary">Choose Topic</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/sounds.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
