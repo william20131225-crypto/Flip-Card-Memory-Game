@@ -12,4 +12,4 @@ Fully responsive (desktop & mobile)
 
 🚀 Run it
 
-Just open index.html in any browser — that's all u have to do!
+Just copy & paste the link in about — that's all u have to do!
