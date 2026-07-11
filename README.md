@@ -12,4 +12,9 @@ Fully responsive (desktop & mobile)
 
 🚀 Run it
 
-Just copy & paste the link in about — that's all u have to do!
+Just open the link in about — that's all u have to do!
+
+🔮 Note:
+
+click at a blank space to active sound
+(Game still in devlopment, expect bugs and un finished features)
